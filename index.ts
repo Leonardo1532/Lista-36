@@ -16,9 +16,9 @@ class Torre {
     }
 }
 
-let Torre1 = new Torre("Cronos", 50, 2, 2, 2500)
-let Torre2 = new Torre("Silver", 50, 1, 3, 3300)
-let Torre3 = new Torre("Ragnar", 50, 2, 2, 2500)
+let Torre1 = new Torre("Cronos", 435, 2, 2, 2500)
+let Torre2 = new Torre("Silver", 275, 1, 3, 3300)
+let Torre3 = new Torre("Ragnar", 421, 2, 2, 2500)
 
 class Inimigo {
     Nome: string
@@ -51,7 +51,6 @@ function AdicionarTorre(obejetoTorre: Torre, posicaoDoIndex: number) {
 let index = 0
 let continuar2 = true
 let continuar3 = true
-// let opcao = prompt("Adicionar uma torre (1)")
 let vidaTorre = 10
 
 function IniciarPartida(qtdeDeInimigos: number) {
@@ -60,7 +59,6 @@ function IniciarPartida(qtdeDeInimigos: number) {
             ArrayInimigo[index] = Inimigo1
             posicaoInimigo[index] = 9
         }
-
         while (continuar3) {
 
             let parametroNome = prompt("Insira o nome da torre para adiona-la")
@@ -80,16 +78,12 @@ function IniciarPartida(qtdeDeInimigos: number) {
                 continuar3 = false
             }
         }
-
         for (let contador = 0; contador < posicaoInimigo.length; contador++) {
             posicaoInimigo[contador] = posicaoInimigo[contador] - 1
-            console.log(posicaoInimigo[contador])
         }
-        
         for (let index3 = 0; index3 < ArrayTorre.length; index3++) {
             for (let index4 = 0; index4 < posicaoInimigo.length; index4++) {
                 if (ArrayTorre[index3] != undefined) {
-
                     if (ArrayTorre[index3].Alcance == 1) {
                         if (posicaoInimigo[index4] == index3) {
                             ArrayInimigo[index4].ReceberDano(ArrayTorre[index3].Atacar())
@@ -99,8 +93,6 @@ function IniciarPartida(qtdeDeInimigos: number) {
                             ArrayInimigo[index4].ReceberDano(ArrayTorre[index3].Atacar())
                         }
                     }
-                    console.log(ArrayInimigo[index4].Vida)
-
                 }
                 if (posicaoInimigo[index4] == index3) {
                     if (ArrayInimigo[index4].Vida <= 0) {
@@ -121,7 +113,6 @@ function IniciarPartida(qtdeDeInimigos: number) {
             continuar2 = false
         }
         contador2 = 0
-
         for (let i = 0; i < ArrayInimigo.length; i++) {
             if (posicaoInimigo[i] == 0) {
                 vidaTorre--
@@ -131,8 +122,6 @@ function IniciarPartida(qtdeDeInimigos: number) {
             console.log("Você Perdeu")
             continuar2 = false
         }
-
         index++
     }
 }
-//console.log(ArrayInimigo)

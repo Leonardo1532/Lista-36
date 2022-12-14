@@ -11,9 +11,9 @@ var Torre = /** @class */ (function () {
     };
     return Torre;
 }());
-var Torre1 = new Torre("Cronos", 50, 2, 2, 2500);
-var Torre2 = new Torre("Silver", 50, 1, 3, 3300);
-var Torre3 = new Torre("Ragnar", 50, 2, 2, 2500);
+var Torre1 = new Torre("Cronos", 435, 2, 2, 2500);
+var Torre2 = new Torre("Silver", 275, 1, 3, 3300);
+var Torre3 = new Torre("Ragnar", 421, 2, 2, 2500);
 var Inimigo = /** @class */ (function () {
     function Inimigo(nome, vida) {
         this.Nome = nome;
@@ -40,7 +40,6 @@ function AdicionarTorre(obejetoTorre, posicaoDoIndex) {
 var index = 0;
 var continuar2 = true;
 var continuar3 = true;
-// let opcao = prompt("Adicionar uma torre (1)")
 var vidaTorre = 10;
 function IniciarPartida(qtdeDeInimigos) {
     while (continuar2) {
@@ -68,7 +67,6 @@ function IniciarPartida(qtdeDeInimigos) {
         }
         for (var contador = 0; contador < posicaoInimigo.length; contador++) {
             posicaoInimigo[contador] = posicaoInimigo[contador] - 1;
-            console.log(posicaoInimigo[contador]);
         }
         for (var index3 = 0; index3 < ArrayTorre.length; index3++) {
             for (var index4 = 0; index4 < posicaoInimigo.length; index4++) {
@@ -83,7 +81,6 @@ function IniciarPartida(qtdeDeInimigos) {
                             ArrayInimigo[index4].ReceberDano(ArrayTorre[index3].Atacar());
                         }
                     }
-                    console.log(ArrayInimigo[index4].Vida);
                 }
                 if (posicaoInimigo[index4] == index3) {
                     if (ArrayInimigo[index4].Vida <= 0) {
@@ -116,4 +113,3 @@ function IniciarPartida(qtdeDeInimigos) {
         index++;
     }
 }
-//console.log(ArrayInimigo)
