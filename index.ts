@@ -36,9 +36,11 @@ let Inimigo1 = new Inimigo("Gnomo", 1000)
 
 let ArrayTorre: Torre[] = []
 let ArrayTorreSup: Torre[] = []
+
 ArrayTorreSup.push(Torre1)
 ArrayTorreSup.push(Torre2)
 ArrayTorreSup.push(Torre3)
+
 let ArrayInimigo: Inimigo[] = []
 let posicaoInimigo: number[] = []
 ArrayTorre.length = 10
